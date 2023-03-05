@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
@@ -36,7 +37,7 @@ public class PracticeFormTest {
         $("#firstName").setValue("Jonny");
         $("#lastName").setValue("Walker");
         $("#userEmail").setValue("test@gmail.com");
-        $("#genterWrapper").$$(".custom-control-inline").first().click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9102222222");
         $("#dateOfBirthInput").click();
         $$(".react-datepicker__week").first().ancestor(".").click();
