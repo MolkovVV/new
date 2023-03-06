@@ -21,16 +21,24 @@ public class StudentRegistrationForm {
     private final SelenideElement SUBJECTS_INPUT = $("#subjectsInput");
     private final SelenideElement HOBBIES_ROW = $("#hobbiesWrapper");
     private final SelenideElement UPLOAD_IMG_INPUT = $("#uploadPicture");
-    private final SelenideElement ADRESS_TEXT_AREA = $("#currentAddress");
+    private final SelenideElement ADDRESS_TEXT_AREA = $("#currentAddress");
     private final SelenideElement STATE_DROPDOWN = $("#state");
     private final SelenideElement CITY_DROPDOWN = $("#city");
     private final SelenideElement CITY_STATE_ELEMENT_WRAPPER = $("#stateCity-wrapper");
     private final SelenideElement SUBMIT_BUTTON =  $("#submit");
 
-    public StudentRegistrationForm openPracticeFormPage(){
+    public StudentRegistrationForm openStudentRegistrationFormPage(){
         open("automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        return this;
+    }
+
+    public StudentRegistrationForm removeBannerOnRegistrationFormPage(){
         executeJavaScript("$('#fixedban').remove()");
+        return this;
+    }
+
+    public StudentRegistrationForm removeFooterOnRegistrationFormPage(){
         executeJavaScript("$('footer').remove()");
         return this;
     }
@@ -60,12 +68,10 @@ public class StudentRegistrationForm {
         return this;
     }
 
-    public StudentRegistrationForm setDate(int day, String monthName, int year){
-        String yearToString = Integer.toString(year);
-
+    public StudentRegistrationForm setDate(String day, String monthName, String year){
         DATE_OF_BIRTH_INPUT.click();
         datePickerOnStudentRegistrationForm.checkVisibilityDatePicker();
-        datePickerOnStudentRegistrationForm.selectYear(yearToString);
+        datePickerOnStudentRegistrationForm.selectYear(year);
         datePickerOnStudentRegistrationForm.selectMonth(monthName);
         datePickerOnStudentRegistrationForm.selectDay(day);
 
@@ -73,12 +79,12 @@ public class StudentRegistrationForm {
     }
 
     public StudentRegistrationForm setSubjectsValue(String subjects){
-        SUBJECTS_INPUT.setValue(subjects);
+        SUBJECTS_INPUT.setValue(subjects).pressEnter();
         return this;
     }
 
-    public StudentRegistrationForm setHobbiesValue(String hobbie){
-        HOBBIES_ROW.$(byText(hobbie)).click();
+    public StudentRegistrationForm setHobbiesValue(String hobby){
+        HOBBIES_ROW.$(byText(hobby)).click();
         return this;
     }
 
@@ -88,7 +94,7 @@ public class StudentRegistrationForm {
     }
 
     public StudentRegistrationForm setCurrentAddress(String currentAddress){
-        ADRESS_TEXT_AREA.setValue(currentAddress);
+        ADDRESS_TEXT_AREA.setValue(currentAddress);
         return this;
     }
 

@@ -13,11 +13,6 @@ public class DatePicker {
         return this;
     }
 
-    public DatePicker selectMonthByValue(String monthNumber){
-        MONTH_SELECT.selectOptionByValue(monthNumber);
-        return this;
-    }
-
     public DatePicker selectMonth(String monthName){
         MONTH_SELECT.selectOption(monthName);
         return this;
@@ -28,7 +23,7 @@ public class DatePicker {
         return this;
     }
 
-    public DatePicker selectDay(int day){
+    public DatePicker selectDay(String day){
         $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day--outside-month)").click();
         return this;
     }

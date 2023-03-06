@@ -1,9 +1,9 @@
-package com.demoqa.practiceform.pages;
+package com.demoqa.practiceform;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 
-public class SetBaseConfiguration {
+public class SetBasePracticeFormConfiguration {
     @BeforeEach
     public void addBrowserSize() {
         Configuration.baseUrl = "https://demoqa.com/";
