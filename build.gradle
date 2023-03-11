@@ -9,6 +9,13 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     implementation 'org.jetbrains:annotations:20.1.0'
