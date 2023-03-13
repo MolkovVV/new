@@ -1,8 +1,8 @@
 package com.demoqa.practiceform.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.practiceform.Components.DatePicker;
-import com.demoqa.practiceform.Components.SuccessModalWindow;
+import com.demoqa.practiceform.components.DatePicker;
+import com.demoqa.practiceform.components.SuccessModalWindow;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -27,18 +27,18 @@ public class StudentRegistrationForm {
     private final SelenideElement CITY_STATE_ELEMENT_WRAPPER = $("#stateCity-wrapper");
     private final SelenideElement SUBMIT_BUTTON =  $("#submit");
 
-    public StudentRegistrationForm openStudentRegistrationFormPage(){
+    public StudentRegistrationForm openForm(){
         open("automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
     }
 
-    public StudentRegistrationForm removeBannerOnRegistrationFormPage(){
+    public StudentRegistrationForm removeBanner(){
         executeJavaScript("$('#fixedban').remove()");
         return this;
     }
 
-    public StudentRegistrationForm removeFooterOnRegistrationFormPage(){
+    public StudentRegistrationForm removeFooter(){
         executeJavaScript("$('footer').remove()");
         return this;
     }

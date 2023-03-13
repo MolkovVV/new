@@ -1,6 +1,6 @@
-package com.demoqa.practiceform.TestDataGenerators;
+package com.demoqa.practiceform.testdata;
 
-public enum Subjects {
+public enum Subject {
         MATH("Maths"),
         COMPUTER("Computer Science"),
         CHEMISTRY("Chemistry"),
@@ -15,7 +15,7 @@ public enum Subjects {
 
         public String title;
 
-        Subjects(String title) {
+        Subject(String title) {
             this.title = title;
         }
 

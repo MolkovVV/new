@@ -1,4 +1,4 @@
-package com.demoqa.practiceform.Components;
+package com.demoqa.practiceform.components;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;

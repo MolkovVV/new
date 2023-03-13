@@ -1,13 +1,13 @@
-package com.demoqa.practiceform.TestDataGenerators;
+package com.demoqa.practiceform.testdata;
 
-public enum Hobbies {
+public enum Hobby {
     SPORTS("Sports"),
     READING("Reading"),
     MUSIC("Music");
 
     private String hobby;
 
-    Hobbies(String hobby) {
+    Hobby(String hobby) {
         this.hobby = hobby;
     }
 

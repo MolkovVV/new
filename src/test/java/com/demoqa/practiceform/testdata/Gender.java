@@ -1,4 +1,4 @@
-package com.demoqa.practiceform.TestDataGenerators;
+package com.demoqa.practiceform.testdata;
 
 public enum Gender {
     MALE("Male"),

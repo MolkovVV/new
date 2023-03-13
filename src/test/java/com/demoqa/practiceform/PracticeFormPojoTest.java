@@ -1,21 +1,21 @@
 package com.demoqa.practiceform;
 
-import com.demoqa.practiceform.TestDataGenerators.StudentsDataGenerator;
+import com.demoqa.practiceform.testdata.TestStudentInit;
 import com.demoqa.practiceform.pages.StudentRegistrationForm;
 import org.junit.jupiter.api.Test;
 
 
-public class PracticeFormPojoTest extends SetBasePracticeFormConfiguration {
+public class PracticeFormPojoTest extends BasePracticeFormConfiguration {
 
     StudentRegistrationForm registrationForm = new StudentRegistrationForm();
 
     @Test
     public void successAllElementsRegistration(){
-        StudentsDataGenerator localTestStudentsData = new StudentsDataGenerator();
+        TestStudentInit localTestStudentsData = new TestStudentInit();
 
-        registrationForm.openStudentRegistrationFormPage()
-                        .removeBannerOnRegistrationFormPage()
-                        .removeFooterOnRegistrationFormPage()
+        registrationForm.openForm()
+                        .removeBanner()
+                        .removeFooter()
                         .setFirstName(localTestStudentsData.getTestFirstName())
                         .setLastName(localTestStudentsData.getTestLastName())
                         .setEmail(localTestStudentsData.getTestEmail())
