@@ -5,6 +5,7 @@ import com.demoqa.practiceform.helpers.Attach;
 import com.demoqa.practiceform.testdata.TestStudentInit;
 import com.demoqa.practiceform.pages.StudentRegistrationForm;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -13,15 +14,16 @@ import static io.qameta.allure.Allure.step;
 public class PracticeFormPojoTest extends BasePracticeFormConfiguration {
 
     StudentRegistrationForm registrationForm = new StudentRegistrationForm();
-
+    @Tag("Registration")
     @Test
     public void successAllElementsRegistration() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         TestStudentInit localTestStudentsData = new TestStudentInit();
+
         step("Открываем форму регистрации нового студента", () -> {
             registrationForm.openForm()
-                    .removeBanner()
-                    .removeFooter();
+                            .removeBanner()
+                            .removeFooter();
         });
 
         step("Заполняем форму тестовыми данными", () -> {
@@ -58,6 +60,5 @@ public class PracticeFormPojoTest extends BasePracticeFormConfiguration {
                     .verifyTableInModalWindow("State and City", localTestStudentsData.getTestState() + " " + localTestStudentsData.getTestCity());
 
         });
-        Attach.addVideo();
     }
 }
