@@ -46,7 +46,9 @@ public class PracticeFormPojoTest extends BasePracticeFormConfiguration {
                     .verifyTableInModalWindow("Picture", localTestStudentsData.getTestFileName())
                     .verifyTableInModalWindow("Address", localTestStudentsData.getTestCurrentAddress())
                     .verifyTableInModalWindow("State and City", localTestStudentsData.getTestState() + " " + localTestStudentsData.getTestCity());
-
+            Attach.pageSource();
+            Attach.screenshotAs("screenshot");
+            Attach.browserConsoleLogs();
             Attach.addVideo();
     }
 }
